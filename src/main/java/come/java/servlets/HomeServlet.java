@@ -47,7 +47,8 @@ public class HomeServlet extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter printWriter = response.getWriter();
 		printWriter.print("<html><body>");
-		printWriter.print("<h1>Hello World</h1>");
+		String name = request.getParameter("name");
+		printWriter.print("<h1>Hello " + ((name == null) ? "World" : name) + "</h1>");
 		printWriter.print("</html></body>");
 	}
 
