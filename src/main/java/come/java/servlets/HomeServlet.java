@@ -1,6 +1,7 @@
 package come.java.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.Servlet;
 import javax.servlet.ServletConfig;
@@ -43,8 +44,11 @@ public class HomeServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		response.setContentType("text/html");
+		PrintWriter printWriter = response.getWriter();
+		printWriter.print("<html><body>");
+		printWriter.print("<h1>Hello World</h1>");
+		printWriter.print("</html></body>");
 	}
 
 	/**
