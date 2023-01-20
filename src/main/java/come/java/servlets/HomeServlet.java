@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class HomeServlet
  */
-@WebServlet("/home")
+@WebServlet("/")
 public class HomeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -48,6 +48,7 @@ public class HomeServlet extends HttpServlet {
 		PrintWriter printWriter = response.getWriter();
 		printWriter.print("<html><body>");
 		String name = request.getParameter("name");
+
 		printWriter.print("<h1>Hello " + ((name == null) ? "World" : name) + "</h1>");
 		printWriter.print("</html></body>");
 	}
